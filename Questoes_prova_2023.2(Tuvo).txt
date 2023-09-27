@@ -1,0 +1,23 @@
+Questão 1:
+Entrar com o numero maior que vai definir o limite e entrar com a expressão codificada.
+Na expressão codificada, o 4° numero menos significativo representa a operação. 
+1 é adição 
+2 é subtração 
+3 é multiplicação 
+4 é divisão 
+Os tres mais significativos vão realizar a operação com os três menos significativos.
+
+Se o numero expresso ultrapassar o valor limite, deverar ser escrito "Overflow".
+
+O valor 2501008 é 258 e deve escrever Overflow. Ja o valor 5020008 deve sair 42.
+
+Questão 2:
+O codigo tem duas entradas, um número de 0 até 31. E um valor de bit de 0 a 4.
+
+O codigo se baseia na alteração genética, onde existe um swap q o valor de bits será trocado pelo seu complementar.
+
+Então a questão mostra que o binario 28
+11000
+Se torna 10100 quando o valor de bit escolhido for 3.
+
+A saída que eu me lembre era para mostrar o binario e o número que fosse sair.
