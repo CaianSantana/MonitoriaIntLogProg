@@ -28,54 +28,53 @@ int main()
     scanf("%d",&limite);
     printf("Digite um numero de 7 dígitos: ");
     scanf("%d",&numero);
-    //validando se o numero tem 7 digitos mesmo(ele nao valida os digitos em si e sim o tamanho do numero)
-        //desestruturando o numero
-        primeiro = (numero/1000000)*100;
-        segundo = ((numero/100000)%10)*10;
-        terceiro = (numero/10000)%10;
-        digitoOperacao = (numero/1000)%10;
-        quinto = ((numero/100)%10)*100;
-        sexto = ((numero/10)%10)*10;
-        setimo = numero%10;
-        //medidas caso o quarto numero seja 0
+    //desestruturando o numero
+    primeiro = (numero/1000000)*100;
+    segundo = ((numero/100000)%10)*10;
+    terceiro = (numero/10000)%10;
+    digitoOperacao = (numero/1000)%10;
+    quinto = ((numero/100)%10)*100;
+    sexto = ((numero/10)%10)*10;
+    setimo = numero%10;
+    //medidas caso o quarto numero seja 0
+    if(digitoOperacao <1 || digitoOperacao>4){
+        digitoOperacao = terceiro;
+        terceiro = 0;
+        primeiro/=10;
+        segundo/=10;
         if(digitoOperacao <1 || digitoOperacao>4){
-            digitoOperacao = terceiro;
-            terceiro = 0;
+            digitoOperacao = segundo;
+            segundo = 0;
             primeiro/=10;
-            segundo/=10;
             if(digitoOperacao <1 || digitoOperacao>4){
-                digitoOperacao = segundo;
-                segundo = 0;
-                primeiro/=10;
-                if(digitoOperacao <1 || digitoOperacao>4){
-                    digitoOperacao = primeiro;
-                }
+                digitoOperacao = primeiro;
             }
         }
-        //transformando os numeros separados em unidades de tres casas
-        tresprimeiros = primeiro+segundo+terceiro;
-        tresultimos = quinto+sexto+setimo;
-        
-        //verificando qual a operacao a ser realizada
-        switch(digitoOperacao){
-            case 1:
-                resultado=tresprimeiros+tresultimos;
-                break;
-            case 2:
-                resultado=tresprimeiros-tresultimos;
-                break;
-            case 3:
-                resultado=tresprimeiros*tresultimos;
-                break;
-            case 4:
-                resultado=tresprimeiros/tresultimos;
-                break;
-        }
-        //verificando se é overflow ou nao.
-        if(resultado>limite){
-            printf("Overflow");
-        }else{
-            printf("resultado: %d", resultado);
-        }
+    }
+    //transformando os numeros separados em unidades de tres casas
+    tresprimeiros = primeiro+segundo+terceiro;
+    tresultimos = quinto+sexto+setimo;
+    
+    //verificando qual a operacao a ser realizada
+    switch(digitoOperacao){
+        case 1:
+            resultado=tresprimeiros+tresultimos;
+            break;
+        case 2:
+            resultado=tresprimeiros-tresultimos;
+            break;
+        case 3:
+            resultado=tresprimeiros*tresultimos;
+            break;
+        case 4:
+            resultado=tresprimeiros/tresultimos;
+            break;
+    }
+    //verificando se é overflow ou nao.
+    if(resultado>limite){
+        printf("Overflow");
+    }else{
+        printf("resultado: %d", resultado);
+    }
     return 0;
 }
